@@ -1,0 +1,128 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fondo y centrado */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #2c3e50;
+}
+
+/* Títulos */
+h1 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #2c3e50;
+}
+
+h2 {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    color: #555;
+    text-align: center;
+}
+
+/* Caja del formulario */
+form {
+    background: #fff;
+    padding: 35px 40px;
+    border-radius: 15px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 350px;
+    text-align: center;
+}
+
+/* Inputs */
+input {
+    padding: 12px 14px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: 0.3s ease;
+}
+
+input:focus {
+    border-color: #6c5ce7;
+    box-shadow: 0 0 8px rgba(108, 92, 231, 0.4);
+    outline: none;
+}
+
+/* Botón principal */
+button[type="submit"] {
+    background: #6c5ce7;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background: #4834d4;
+}
+
+/* Botón borrar */
+#borrar {
+    background: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    font-size: 0.95rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-top: 15px;
+}
+
+#borrar:hover {
+    background: #c0392b;
+}
+
+/* Enlace */
+a {
+    margin-top: 20px;
+    display: inline-block;
+    color: #6c5ce7;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #4834d4;
+}
+
+
+/* estilos a la tabla de cursos html */
+table{
+    width: 70%;
+    margin: 0 auto;
+}
+table td, table tr{
+    border: 1px solid ;
+}
+table thead{
+    background: #594ace;
+
+}
+
+table thead td{
+    padding: 10px;
+}

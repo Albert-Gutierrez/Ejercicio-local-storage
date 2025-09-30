@@ -35,30 +35,31 @@ form.addEventListener('submit', (e) => {
         cupo: cupo
     }
 
-    localStorage.setItem('curso', JSON.stringify(nuevoCurso));
+    //capturamos el arreglo existente en el localStorage o lo creamos vacio si no existe previamente 
+    const cursosGuardados = JSON.parse(localStorage.getItem("cursos")) || [];
+    //agregamos al arreglo [] cursos guardados, el nuevo curso {}
+    cursosGuardados.push(nuevoCurso);
+
+    localStorage.setItem('cursos', JSON.stringify(cursosGuardados));
     form.reset();
-
-    const cursoCreado = localStorage.getItem('curso');
-
-    const objetoCurso = JSON.parse(cursoCreado)//sirve para convertir un texto en formato JSON a un objeto de JavaScript. 
-
-    mensajeCurso.innerHTML = ' curso: ' + objetoCurso.nombre + '<br>' + ' profesor: ' + objetoCurso.profesor + '<br>' + ' precio: ' + objetoCurso.precio + '<br>' + ' ciudad: ' + objetoCurso.ciudad + '<br>' + ' cupo: ' + objetoCurso.cupo;
 });
 
 //aca aparece el curso nuevo que se eguardo
 document.addEventListener('DOMContentLoaded', () => {
-    const cursoCreado = localStorage.getItem('curso');
+    const cursoCreado = localStorage.getItem('cursos');
 
     if (cursoCreado) {
         const objetoCurso = JSON.parse(cursoCreado)//sirve para convertir un texto en formato JSON a un objeto de JavaScript. 
 
-        mensajeCurso.innerHTML = ' curso: ' + objetoCurso.nombre + '<br>' + ' profesor: ' + objetoCurso.profesor + '<br>' + ' precio: ' + objetoCurso.precio + '<br>' + ' ciudad: ' + objetoCurso.ciudad + '<br>' + ' cupo: ' + objetoCurso.cupo;
+        mensajeCurso.textContent = ' curso: ' + objetoCurso.nombre + ' profesor: ' + objetoCurso.profesor + ' precio: ' + objetoCurso.precio + ' ciudad: ' + objetoCurso.ciudad + ' cupo: ' + objetoCurso.cupo;
     }
 });
 
-
 //aca se elimina el nombre que el usuario coloco
 btnBorrarCurso.addEventListener('click', () => {
-    localStorage.removeItem('curso'); // elimina el nombre de ususario
+    localStorage.removeItem('cursos'); // elimina el nombre de ususario
     mensajeCurso.textContent = 'Curso eliminado';
 });
+
+
+
